@@ -2,12 +2,8 @@ from brownie import Contract, accounts  # , Settler, SynthSwap
 from brownie_tokens import MintableForkToken
 from web3 import Web3
 
-# DEPLOYER = accounts[0]
-
 
 def main():
-    # def main(deployer=DEPLOYER):
-    # settler = Settler.deploy({"from": deployer})
 
     wBTC_addr = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
     sUSD_addr = "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51"
@@ -32,11 +28,12 @@ def main():
     wBTC.approve(StableSwap, amount, {"from": accounts[0]})
     # wBTC.approve(swap, amount, {"from": deployer})
     tx = StableSwap.swap_into_synth(
-        wBTC_addr, sBTC_addr, amount, into_synth_amt, {"from": accounts[0]}
+        wBTC_addr, sUSD_addr, amount, into_synth_amt, {"from": accounts[0]}
     )
     sBTC_from_swap = int(tx.events["TokenExchange"]["tokens_bought"])
-    print(tx.events)
-    # print(tx.info())
+    # print(tx.events)
+    print(tx.events["TokenUpdate"]["token_id"])
+    print((tx.events["TokenUpdate"]["underlying_balance"]) / (10 ** 10))
     print(sBTC_from_swap / (10 ** 10))
     # print(f"Raw first swap amount is : {sBTC_from_swap}")
 
