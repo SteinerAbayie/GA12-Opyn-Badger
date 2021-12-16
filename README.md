@@ -8,11 +8,11 @@ viable method, testing for this flow would be difficult. I did not identify an e
 
 ### Running the code:
 
-To run the code you will need a .env with an ETHERSCAN_TOKEN,WEB3_INFURA_PROJECT_ID, and PRIVATE_KEY defined. All addresses will need to be for kovan.
+To run the Openvault.py you will need a .env with an ETHERSCAN_TOKEN,WEB3_INFURA_PROJECT_ID, and PRIVATE_KEY defined. All addresses will need to be for kovan.
 
 Make sure you change KovanWallet_addr in Openvault.py 
 
-
+Nothing needs to be changed to run gitproj.py, that script is intended to show how a swap on curve.fi could be done. wBTC -> sUSD.
 
 ### Things to be added:
 
