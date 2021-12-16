@@ -12,6 +12,10 @@ oTokenFactory = interface.IOtokenFactory(
     config["networks"][network.show_active()]["Factory"]
 )
 
+KovanWallet_addr = "0x3d19f325A3fda9495eEEd07A1AD31Ee73fD79175"
+wBTC_addr = "0x50570256f0da172a1908207aaf0c80d4b279f303"
+OpynUSD_addr = "0x7e6edA50d1c833bE936492BF42C1BF376239E9e2"
+
 
 def main():
     account = get_account()
@@ -20,9 +24,9 @@ def main():
         [
             [
                 0,
-                "0x3d19f325A3fda9495eEEd07A1AD31Ee73fD79175",
-                "0x3d19f325A3fda9495eEEd07A1AD31Ee73fD79175",
-                "0x50570256f0da172a1908207aaf0c80d4b279f303",
+                KovanWallet_addr,
+                KovanWallet_addr,
+                wBTC_addr,
                 10,
                 0,
                 0,
@@ -36,9 +40,9 @@ def main():
         [
             [
                 5,
-                "0x3d19f325A3fda9495eEEd07A1AD31Ee73fD79175",
-                "0x3d19f325A3fda9495eEEd07A1AD31Ee73fD79175",
-                "0x50570256f0da172a1908207aaf0c80d4b279f303",
+                KovanWallet_addr,
+                KovanWallet_addr,
+                wBTC_addr,
                 10,
                 500000000,
                 0,
@@ -49,9 +53,9 @@ def main():
     )
     tx2.wait(2)
     tx3 = oTokenFactory.createOtoken(
-        "0x50570256f0da172a1908207aAf0c80d4b279f303",  # wBTC
-        "0x7e6edA50d1c833bE936492BF42C1BF376239E9e2",  # OpynUSD
-        "0x50570256f0da172a1908207aAf0c80d4b279f303",  # wBTC
+        wBTC_addr,  # wBTC
+        OpynUSD_addr,  # OpynUSD
+        wBTC_addr,  # wBTC
         62100 * 1e6,  # strike price
         1640419200,  # Christmas_Day MUST BE UNIX and SET TO 8AM
         False,
@@ -64,8 +68,8 @@ def main():
         [
             [
                 1,
-                "0x3d19f325A3fda9495eEEd07A1AD31Ee73fD79175",
-                "0x3d19f325A3fda9495eEEd07A1AD31Ee73fD79175",
+                KovanWallet_addr,
+                KovanWallet_addr,
                 mintedToken_addy,
                 10,
                 1 * 1e8,
