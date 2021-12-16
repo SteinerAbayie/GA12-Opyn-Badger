@@ -9,7 +9,7 @@ oTokenFactory_addr = "0xb9D17Ab06e27f63d0FD75099d5874a194eE623e2"
 opyn = interface.IController(
     config["networks"][network.show_active()]["Controller_addy"]
 )
-oTokenFactory = interface.IController(
+oTokenFactory = interface.IOtokenFactory(
     config["networks"][network.show_active()]["Factory"]
 )
 
