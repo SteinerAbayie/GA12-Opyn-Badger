@@ -1,5 +1,6 @@
 """
-The script below is designed to open an opyn vault. Then is deposits tokens in that vault.
+The script below is designed to work on kovan, the addresses will need to be updated to work on other testnets
+The script is designed to open an opyn vault. Then is deposits tokens in that vault.
 Following the deposit it creates a short oToken. Make sure that the expiry date is a unix timestamp that
 expires on 8AM. After that the token created is minted using the vault as collateral.
 The token can then be sold on Gnosis Safe, Airswap, or Ox.
