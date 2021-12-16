@@ -24,3 +24,18 @@ Unit tests, integration tests, the ablity to sell the tokens in a test enviromen
 This was my **first** hackathon project, it was fun. Seeing how development is done in web3 was interesting and I learned a tok. If I could go back I would have started when the hackathon started and not 8ish days in, in my defence, I started as soon as I finished the freecodecamp solidity tutorial. I would have also spent more time finding team members, and I would have spend more time reading documentation and would've reached out to people on discord sooner. A big takeaway for myself has been that whoever solves the problem of getting new projects to clearly document their code is going to change the game and in the absence of clear documentation, Discord dev channels are your best friend. Also there should be more cross project collaboration. 
 
 **If there are ways that this project could be improved, please let me know!**
+
+
+
+##Important links:
+
+Lets you check the vault balance, oTokens created and minted:
+https://gammaportal.xyz/#/
+
+Opyn repos:
+https://github.com/opynfinance/GammaProtocol
+repo for perpetual strats (Hard to compile):
+https://github.com/opynfinance/perp-vault-templates
+
+Potential Opyn strategies outlined in this post:
+https://medium.com/opyn/introducing-opyn-developer-toolkit-2bfd5bcc7a92
