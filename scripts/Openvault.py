@@ -1,3 +1,13 @@
+"""
+The script below is designed to open an opyn vault. Then is deposits tokens in that vault.
+Following the deposit it creates a short oToken. Make sure that the expiry date is a unix timestamp that
+expires on 8AM. After that the token created is minted using the vault as collateral.
+The token can then be sold on Gnosis Safe, Airswap, or Ox.
+The script does not sell the token, testnets are fragmented and in theory a counter party is needed.
+
+
+"""
+
 from brownie import Contract, accounts, interface, config, network
 from brownie.network import account  # , Settler, SynthSwap
 from brownie_tokens import MintableForkToken
@@ -19,7 +29,11 @@ OpynUSD_addr = "0x7e6edA50d1c833bE936492BF42C1BF376239E9e2"
 
 def main():
     account = get_account()
-    # tx opens the vault and sets the currencey that the vault is meant to accept
+    """
+    tx opens the vault and sets the currencey that the vault is meant to accept
+    To see how operate works, go to IController, the operate function opens vaults, mints tokens,
+    It also settles vaults.
+    """
     tx = opyn.operate(
         [
             [
