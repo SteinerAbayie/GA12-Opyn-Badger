@@ -31,6 +31,8 @@ networks:
     oracle: '0xc57b33452b4f7bb189bb5afae9cc4aba1f7a4fd8'
     jobId: 'd5270d1c311941d0b08bead21fea7747'
     eth_usd_price_feed: '0x9326BFA02ADD2366b30bacB125260Af641031331'
+    Controller_addy: '0xdEE7D0f8CcC0f7AC7e45Af454e5e7ec1552E8e4e'
+    Factory: '0xb9D17Ab06e27f63d0FD75099d5874a194eE623e2'
     # Change to True if you have an Etherscan API key and want to verify
     verify: False
     update_interval: 60
