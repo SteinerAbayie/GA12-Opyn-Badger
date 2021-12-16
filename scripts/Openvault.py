@@ -19,7 +19,7 @@ OpynUSD_addr = "0x7e6edA50d1c833bE936492BF42C1BF376239E9e2"
 
 def main():
     account = get_account()
-
+    # tx opens the vault and sets the currencey that the vault is meant to accept
     tx = opyn.operate(
         [
             [
@@ -36,6 +36,7 @@ def main():
         {"from": account},
     )
     tx.wait(2)
+    # tx2 deposits 5wBTC in the vault
     tx2 = opyn.operate(
         [
             [
@@ -52,6 +53,10 @@ def main():
         {"from": account},
     )
     tx2.wait(2)
+    # tx3 creates a shortOtoken that can then be minted by anyone. If the token already exists
+    # then an error will be shown. This is where price is set. Currently opyn does not have a "pricing"
+    # contract, this means that either off chain computation must be done to make sure that the option is priced
+    # appropriatly or price should be pulled from some API or based on another exchange.
     tx3 = oTokenFactory.createOtoken(
         wBTC_addr,  # wBTC
         OpynUSD_addr,  # OpynUSD
@@ -64,6 +69,9 @@ def main():
     mintedToken_addy = tx3.events["OtokenWhitelisted"]["otoken"]
     print(mintedToken_addy)
     tx3.wait(3)
+    # tx4 mints the token and deposits it in your wallet. One token is minted below. Each token represents one
+    # unit of the vault. This means tht for our 5BTC vault, 1 otoken has been minted, only 4 more can be minted
+
     tx4 = opyn.operate(
         [
             [
