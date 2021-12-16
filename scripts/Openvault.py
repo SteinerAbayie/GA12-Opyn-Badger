@@ -42,7 +42,7 @@ def main():
                 KovanWallet_addr,
                 KovanWallet_addr,
                 wBTC_addr,
-                10,
+                11,  # The vault ID, it begins at 1
                 0,
                 0,
                 "0x",
@@ -59,8 +59,8 @@ def main():
                 KovanWallet_addr,
                 KovanWallet_addr,
                 wBTC_addr,
-                10,
-                500000000,
+                11,  # Should be the same vault ID as above
+                500000000,  # 5 wBTC
                 0,
                 "0x",
             ]
@@ -76,7 +76,7 @@ def main():
         wBTC_addr,  # wBTC
         OpynUSD_addr,  # OpynUSD
         wBTC_addr,  # wBTC
-        62100 * 1e6,  # strike price
+        62100 * 1e6,  # strike price MAKE SURE TO INCREMENT OR CHANGE THE DATE
         1640419200,  # Christmas_Day MUST BE UNIX and SET TO 8AM
         False,
         {"from": account},
@@ -94,8 +94,8 @@ def main():
                 KovanWallet_addr,
                 KovanWallet_addr,
                 mintedToken_addy,
-                10,
-                1 * 1e8,
+                11,  # vault from which the tokens will be minted.
+                1 * 1e8,  # Number of tokens to be minted
                 0,
                 "0x",
             ]
