@@ -14,6 +14,9 @@ Make sure you change KovanWallet_addr in Openvault.py
 
 Nothing needs to be changed to run gitproj.py, that script is intended to show how a swap on curve.fi could be done. wBTC -> sUSD.
 
+To run first enter brownie compile into the CLI
+Then brownie console --network kovan
+Then run('Openvault')
 ### Things to be added:
 
 Unit tests, integration tests, the ablity to sell the tokens in a test enviroment, integration with the badger strategy mix, diagrams showing the entire option flow. Figuring out how to price the options. I asked the dev channel on Opyn and it seems like the jury is still out on how to effectivly price the options. Figuring out how to set the strike price is also an interesting challenge, the 5-10% above current trading price seems best but with BTC IV who knows.
